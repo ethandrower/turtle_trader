@@ -23,7 +23,7 @@ Todays date
 import MySQLdb
 import _mysql
 
-
+### Create a table for the ticker, insert in one row for today's date after close ###
 def insertQuoteRow(ticker, openPrice, dayLow, dayHigh):
 
 
@@ -46,8 +46,7 @@ def insertQuoteRow(ticker, openPrice, dayLow, dayHigh):
 
 
 
-
-
+######################## main method ##########################
 
 # open tickers.txt
 
@@ -67,7 +66,7 @@ for row in tickersList:
     for ticker in row[:-1]:
         query += (ticker + "+")
 
-    query +=  "&f=ogh"
+    query +=  "&f=ogh"   
 ###  o = open,  g = days low, h = days high
 
 print(query + "\n")
@@ -83,9 +82,7 @@ lineArray = f.readlines()
 
 inc=0
 for line in lineArray:
-    #print(str(tickersList[0][inc]) + " " + line)
-    line = line.split(",")
-    
+    line = line.split(",") 
     ticker = str(tickersList[0][inc])
     open = line[0]
     low = line[1]
@@ -98,11 +95,7 @@ for line in lineArray:
     insertQuoteRow(ticker, open, low, high)
 
 
-#get today's date
 
 
-# For each ticker:  write the three fields to the corresponding mongo document
-import MySQLdb
-import _mysql
 
 
