@@ -1,10 +1,12 @@
 
 
 
-'''This is a python script that will read from tickers.txt, and structure
-a yahoo csv query to return various tickers. Then it will interact with a 
-mongodb database and update the price fields.
+'''
+This is incomplete (i moved all my trading stuff over to quantopian) but it's sstill a good quick example of calling
+the yahoo finance stock api
 
+This is a python script that will read from tickers.txt, and structure
+a yahoo csv query to return various tickers.   
 ** A separate script will run daily to see if we have an buy triggers (or close to buy triggers)
 
 Fields pulled from quote
@@ -27,7 +29,7 @@ import _mysql
 def insertQuoteRow(ticker, openPrice, dayLow, dayHigh):
 
 
-    db = _mysql.connect(host="216.231.132.54", user="turtleUser",passwd="turtl3sp4ss",db="turtleDB")
+    db = _mysql.connect(host="localhost", user="turtleUser",passwd="password",db="turtleDB")
 
     import time
 #works for date #### 
